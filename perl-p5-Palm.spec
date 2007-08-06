@@ -1,5 +1,5 @@
-%define version 1.008
-%define release %mkrel 9
+%define version 1.009
+%define release %mkrel 1
 %define durl http://www.cpan.org/authors/id/A/AR/ARENSB
 %define rname p5-Palm
 %define name perl-%{rname}
