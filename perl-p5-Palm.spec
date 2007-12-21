@@ -12,6 +12,7 @@ Source0: %{durl}/%{rname}-%{version}.tar.bz2
 License: GPL
 Group: Development/Perl
 Buildrequires: perl-devel
+BuildRoot: %{_tmppath}/%{name}-buildroot
 Url: http://www.ooblick.com/software/coldsync/
 Buildarch: noarch
 Epoch: 1
