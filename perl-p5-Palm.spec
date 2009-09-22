@@ -1,21 +1,19 @@
-%define version 1.009
-%define release %mkrel 5
-%define durl http://www.cpan.org/authors/id/A/AR/ARENSB
-%define rname p5-Palm
-%define name perl-%{rname}
+%define upstream_name    p5-Palm
+%define upstream_version 1.011
 
-Summary: Modules for reading manipulating, and writing .pdb and .prc database
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{durl}/%{rname}-%{version}.tar.bz2
-License: GPL
-Group: Development/Perl
-Buildrequires: perl-devel
-BuildRoot: %{_tmppath}/%{name}-buildroot
-Url: http://www.ooblick.com/software/coldsync/
-Buildarch: noarch
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Epoch: 1
+
+Summary:     Modules for reading manipulating, and writing .pdb and .prc database
+License:     GPL
+Group:       Development/Perl
+Url:         http://www.ooblick.com/software/coldsync/
+Source0:     http://www.cpan.org/modules/by-module/p5/%{upstream_name}-%{upstream_version}.tar.gz
+
+Buildarch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is p5-Palm, a set of Perl 5 modules for reading, manipulating,
@@ -23,10 +21,9 @@ and writing the .pdb and .prc database files used by PalmOS devices
 such as the PalmPilot and its successors.
 
 %prep
-%setup -q -n %{rname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
@@ -36,9 +33,7 @@ make test || :
 
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
-
 %makeinstall_std
-
 %{__rm} -rf $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
 
 %clean
