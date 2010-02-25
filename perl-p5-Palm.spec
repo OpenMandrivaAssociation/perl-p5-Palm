@@ -1,5 +1,5 @@
 %define upstream_name    p5-Palm
-%define upstream_version 1.011
+%define upstream_version 1.012
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
