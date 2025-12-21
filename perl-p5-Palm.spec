@@ -12,6 +12,7 @@ Group:		Development/Perl
 Url:		https://www.ooblick.com/software/coldsync/
 Source0:	http://www.cpan.org/modules/by-module/p5/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildArch:	noarch
 
