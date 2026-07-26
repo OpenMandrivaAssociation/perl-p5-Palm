@@ -1,16 +1,14 @@
 %define upstream_name    p5-Palm
-%define upstream_version 1.012
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	1.012
+Release:	6
 Epoch:		1
 
 Summary:	Modules for reading manipulating, and writing .pdb and .prc database
 License:	GPL
 Group:		Development/Perl
 Url:		https://www.ooblick.com/software/coldsync/
-Source0:	http://www.cpan.org/modules/by-module/p5/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/p5/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ and writing the .pdb and .prc database files used by PalmOS devices
 such as the PalmPilot and its successors.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
