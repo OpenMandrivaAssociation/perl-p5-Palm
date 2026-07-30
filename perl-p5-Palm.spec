@@ -1,7 +1,8 @@
 %define upstream_name    p5-Palm
+%define upstream_version 1.400
 Name:		perl-%{upstream_name}
 Version:	1.400
-Release:	1
+Release:	2
 Epoch:		1
 
 Summary:	Modules for reading manipulating, and writing .pdb and .prc database
@@ -20,7 +21,7 @@ and writing the .pdb and .prc database files used by PalmOS devices
 such as the PalmPilot and its successors.
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n Palm-1.400
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
