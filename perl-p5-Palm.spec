@@ -2,7 +2,7 @@
 %define upstream_version 1.400
 Name:		perl-%{upstream_name}
 Version:	1.400
-Release:	10
+Release:	1
 Epoch:		1
 
 Summary:	Modules for reading manipulating, and writing .pdb and .prc database
@@ -25,8 +25,7 @@ such as the PalmPilot and its successors.
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
-
+%make_build
 %check
 # Test are broken, ignoring result
 make test || :
@@ -36,10 +35,8 @@ make test || :
 rm -rf %{buildroot}%{perl_archlib}/perllocal.pod
 
 %files
-%doc README TODO
-%{_bindir}/*
+%doc Changes LICENSE META.yml README TODO
 %{perl_vendorlib}/*
-%{_mandir}/man1/*
 %{_mandir}/man3/*
 
 
