@@ -2,7 +2,7 @@
 %define upstream_version 1.400
 Name:		perl-%{upstream_name}
 Version:	1.400
-Release:	5
+Release:	6
 Epoch:		1
 
 Summary:	Modules for reading manipulating, and writing .pdb and .prc database
